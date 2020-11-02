@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+.banner{
+    background-image: linear-gradient(140deg, rgba(128, 126, 31, 0) 0%, rgba(4, 32, 43, 0.712) 100%), url("../img/giphy.gif");
+    width: 100%;
+    height: 639px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.textos-h{
+    height: 500px;
+    color: rgb(15, 190, 182);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos-h h1{
+    animation: arriba 1s ease-in;
+    font-size: 60px;
+    
+
+    text-shadow: 2px 2px #ffe137,
+    1px 1px #142533,
+    2px 2px #142533;
+
+
+
+    font-family: 'Pacifico', cursive;
+}
+
+.textos-h p{
+    color: #f5e342;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.textos-h a{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 40%;
+    height: 14%;
+    margin-top: 29px;
+    padding: 12px 15px;
+    font-size: 33px;
+    background:#21bf2e ;
+    border-radius: 8px;
+    color: #fff;
+}
+#estrella{
+    margin-top: -100px;
+    margin-left: -70%;
+    width: 90px;
+    animation: a 1s ease-in;
+}
+#estrellados{
+    margin-top: -100px;
+    margin-left: 70%;
+    width: 90px;
+    animation: ar 1s ease-in;
+}
+@keyframes a{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    40%{
+        opacity: 0;
+        transform: translateX(33em)
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+
+@keyframes ar{
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    40%{
+        opacity: 0;
+        transform: translateX(3em)
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    
+}
+
+@keyframes arriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+
+.contenedor {
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+}
+form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+.barra-busqueda {
+    width: 70%;
+    
+	height: 40px;
+	line-height: 40px;
+	background:rgb(65, 173, 192);
+	padding: 0 20px;
+    border: 1px solid #c236a4;
+    color: #fff;
+	text-align: center;
+	font-size: 16px;
+}
+
+.categorias {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.categorias a {
+	color: #000;
+	margin: 10px 20px;
+	font-size: 18px;
+	font-weight: 700;
+}
+.categorias a.activo {
+	color: #3c2dc5;
+}
+
+#lupa {
+    background: #f06dd3;
+    width: 20px;
+    border-radius: 1px 1px ;
+    border: 2px  solid #c236a4 ;
+}
+
+
+
+
+
+
+.grid {
+	position: relative;
+	width: 85%;
+	opacity: 0;
+	transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas {
+    margin: 55px;
+	opacity: 1;
+}
+
+.item{
+    border: 2px solid #1f8fbb;
+	border-radius: 30px;
+}
+
+ .item img:hover {
+	
+	animation: icono .6s ease;
+	}
+	
+.logo {
+	
+		animation: logo .6s alternate;
+		}
+
+.grid .item {
+	position: absolute;
+	display: block;
+	padding: 0;
+	margin: 10px;
+	width: calc(33.333333% - 20px);
+}
+
+.grid .item-contenido {
+	margin: 12px;
+	position: relative;
+}
+
+.item-contenido{
+	margin-bottom: 12px;
+
+}
+
+.grid .item img {
+	width: 29%;
+	margin: 3px;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+/* ------------------------- */
+/* Overlay */
+/* ------------------------- */
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.9);
+	width: 100%;
+	height: 100vh;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.overlay.activo {
+	display: flex;
+}
+
+#grande{
+	width: 89%;
+}
+
+.overlay img {
+	margin: 22px;
+	max-width: 100%;
+}
+
+.overlay .descripcion {
+	display: block;
+	background: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 5px;
+	border-radius: 10px;
+	max-width: 80%;
+}
+
+.contenedor-img {
+	position: relative;
+}
+
+.overlay #btn-cerrar-popup {
+	background: none;
+	font-size: 20px;
+	color: red;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: -20px;
+	top: -20px;
+}
+footer{
+
+    background-size: cover;
+}
+footer .redes-sociales {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding: 2px;
+	flex-wrap: wrap;
+}
+
+footer .redes-sociales a {
+	display: block;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	margin: 11px;
+	text-align: center;
+	border-radius: 60px;
+	transition: .3s ease all;
+}
+
+footer .redes-sociales .twitter {background: #1da1f2;}
+footer .redes-sociales .facebook {background: #3b5998;}
+footer .redes-sociales .instagram {background: #c13584;}
+
+footer .redes-sociales a i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+footer .contenedor-icono:hover a {
+	animation: icono .5s ease;
+}
+
+@keyframes icono {
+	from {
+		transform: rotate3d(0,0,0,0);
+	}
+	to {
+		transform: rotate3d(0,1,0, 60deg);
+	}
+}
+
+
+footer .creado-por a {color: #fff;}
+
+
+
+/*  movil  */
+@media screen and (max-width: 735px){
+body{
+    width: 100%;
+}
+    .textos-h h1{
+        margin-bottom: 28px;
+        font-size: 27px;
+    }
+    .textos-h a{
+        
+        width: 50%;
+        height: 2em;
+        margin-top: 12px;
+        padding: 5px 15px;
+        font-size: 14px;
+        background:#21bf2e ;
+        
+    }
+    #estrella{
+        margin-left: -76%;
+        width: 30px;
+        animation: a 1s ease-in;
+    }
+    #estrellados{
+        margin-top: -28px;
+       margin-bottom: 128px;
+        margin-left: 76%;
+        width: 30px;
+        animation: ar 1s ease-in;
+    }
+
+
+    .overlay img {
+        margin: 38px;
+        max-width: 80%;
+    }
+
+    .overlay #btn-cerrar-popup {
+        background: none;
+        font-size: 20px;
+        color: red;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: -20px;
+    }
+    
+.grid.imagenes-cargadas {
+    opacity: 1;
+    margin: 24px;
+}
+    
+.grid .item-contenido {
+	width: 100%;
+    margin: 6px;
+}
+#grande{
+    
+	width: 78%;
+}
+}
